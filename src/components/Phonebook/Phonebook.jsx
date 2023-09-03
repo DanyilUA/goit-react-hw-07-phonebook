@@ -3,6 +3,8 @@ import css from './Phonebook.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/selectors';
 import { addContact } from 'redux/operations';
+import { fetchContacts } from 'redux/operations';
+import { useEffect } from 'react'; 
 
 export default function Phonebook() {
 
@@ -13,6 +15,9 @@ export default function Phonebook() {
   const nameInputId = nanoid();
   const phoneInputId = nanoid();
 
+    useEffect(() => {
+      dispatch(fetchContacts());
+    }, [dispatch]);
 
   const handleFomSubmit = event => {
     event.preventDefault();
