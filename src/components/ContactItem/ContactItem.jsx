@@ -3,9 +3,7 @@ import { deleteContact } from 'redux/operations';
 
 export const Contact = ({contact}) => {
     const dispatch = useDispatch();
-
-    
-    return (
+     return (
         <div>
             <p>
                 {contact.name}: {contact.number}
